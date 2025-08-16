@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SEIZE THE THRONE: MrBeast's $5,000,000 Mega Challenge</title>
+
+  <!-- Preload -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --beast-red: #e62117;
+      --beast-gold: #ffd700;
+      --beast-dark: #0f1c3f;
+      --beast-light: #f0f2f5;
+      --beast-accent: #00a2ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--beast-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #0f1c3f 0%, #1a2a5a 50%, #0f1c3f 100%);
+      background-size: 200% 200%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Premium Beast-style header */
+    header {
+      background: linear-gradient(90deg, var(--beast-dark) 0%, var(--beast-red) 100%);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-img {
+      height: 40px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      transition: transform 0.3s ease;
+      border-radius: 10px;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.1);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--beast-gold), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--beast-gold);
+    }
+
+    .nav-link:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--beast-gold);
+      border-radius: 3px;
+    }
+
+    /* Hero section - Premium Beast style */
+    .hero {
+      background: url('https://i.pinimg.com/736x/be/e8/e3/bee8e3a4a5e0d52308aab86a484e52ca.jpg') no-repeat center center/cover;
+      padding: 120px 20px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(15,28,63,0.8) 0%, rgba(230,33,23,0.6) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+      font-weight: 800;
+      line-height: 1.1;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .hero h1 span {
+      color: var(--beast-gold);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+      50% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+      100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 32px;
+      opacity: 0.9;
+    }
+
+    .hero-image {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 45%;
+      height: auto;
+      z-index: 1;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      border: 4px solid var(--beast-gold);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(-50%) translateY(0px); }
+      50% { transform: translateY(-50%) translateY(-20px); }
+      100% { transform: translateY(-50%) translateY(0px); }
+    }
+
+    /* Beast-style buttons */
+    .cta-button {
+      background: linear-gradient(135deg, var(--beast-red) 0%, var(--beast-dark) 100%);
+      color: white;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(230,33,23,0.3);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(230,33,23,0.4);
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid var(--beast-gold);
+      margin-left: 16px;
+      box-shadow: none;
+    }
+
+    .cta-button.secondary:hover {
+      background: rgba(255,215,0,0.1);
+    }
+
+    .registration-fee {
+      background: rgba(255,215,0,0.2);
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-top: 16px;
+      display: inline-block;
+      border: 1px solid var(--beast-gold);
+      font-size: 0.9rem;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Countdown timer */
+    .countdown {
+      display: flex;
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .countdown-item {
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 80px;
+      border: 1px solid var(--beast-gold);
+      transition: transform 0.3s ease;
+    }
+
+    .countdown-item:hover {
+      transform: scale(1.05);
+    }
+
+    .countdown-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--beast-gold);
+    }
+
+    .countdown-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    /* Features section - Premium cards */
+    .features {
+      padding: 100px 0;
+      background-color: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 60px;
+      font-weight: 800;
+      position: relative;
+      color: white;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--beast-red), var(--beast-gold));
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(230,33,23,0.2);
+      border-color: var(--beast-gold);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--beast-red), var(--beast-gold));
+      transition: width 0.3s ease;
+    }
+
+    .feature-card:hover::before {
+      width: 8px;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--beast-red) 0%, var(--beast-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      color: var(--beast-gold);
+    }
+
+    /* Beast Mode Challenges Section */
+    .challenges {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--beast-dark) 0%, #1a2a5a 100%);
+      color: white;
+    }
+
+    .challenge-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.4s ease;
+    }
+
+    .challenge-card:hover {
+      transform: scale(1.02);
+      border-color: var(--beast-gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .challenge-title {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: var(--beast-gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .challenge-title i {
+      font-size: 1.8rem;
+    }
+
+    /* Registration Section */
+    .registration-section {
+      padding: 100px 0;
+      background: rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .registration-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.1);
+      padding: 40px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .crown-svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--beast-gold);
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+
+    /* Leaderboard Section */
+    .leaderboard-section {
+      padding: 100px 0;
+      text-align: center;
+      color: white;
+    }
+
+    /* Footer - Beast style */
+    footer {
+      background: linear-gradient(135deg, #0a1429 0%, var(--beast-dark) 100%);
+      color: white;
+      padding: 80px 0 40px;
+      position: relative;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      font-weight: 700;
+      color: var(--beast-gold);
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--beast-red);
+      border-radius: 3px;
+    }
+
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 16px;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-link i {
+      width: 20px;
+      text-align: center;
+    }
+
+    .footer-link:hover {
+      opacity: 1;
+      color: var(--beast-gold);
+      transform: translateX(5px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--beast-red);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes crownPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    .crown-animate {
+      animation: crownPulse 1.5s infinite;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-image {
+        max-width: 400px;
+        opacity: 0.9;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .hero {
+        padding: 80px 20px;
+        text-align: center;
+      }
+      
+      .hero-content {
+        margin: 0 auto;
+      }
+      
+      .hero-image {
+        position: relative;
+        transform: none;
+        max-width: 100%;
+        margin: 40px auto 0;
+        right: auto;
+        animation: floatMobile 6s ease-in-out infinite;
+      }
+      
+      @keyframes floatMobile {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      
+      .cta-button.secondary {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .countdown {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .registration-box {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8DIfpzu363CePCuVl5DsGqzkqVTBOu7GTQQ&s" alt="MrBeast Logo" class="logo-img" loading="lazy">
+        <div class="logo-text">SEIZE THE THRONE</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#challenges" class="nav-link">Challenges</a>
+        <a href="#features" class="nav-link">Prizes</a>
+        <a href="#leaderboard" class="nav-link">Leaderboard</a>
+        <a href="#register" class="nav-link">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>WIN <span>$5,000,000</span> IN MRBEAST'S BIGGEST CHALLENGE EVER</h1>
+        <p>Compete in extreme challenges designed by MrBeast himself for a chance to win life-changing cash prizes, cars, and a golden throne!</p>
+        <div class="countdown">
+          <div class="countdown-item">
+            <div class="countdown-number" id="days">07</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="hours">23</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="minutes">45</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="seconds">12</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+        <div class="cta-buttons">
+          <a href="#register" class="cta-button">
+            <i class="fas fa-crown"></i> Register Now ($200)
+          </a>
+          <button class="cta-button secondary" onclick="window.open('https://m.youtube.com/watch?v=Hdtptoiugew', '_blank')">
+            <i class="fas fa-play-circle"></i> Watch Trailer
+          </button>
+        </div>
+        <div class="registration-fee">
+          Participation fee: <strong>$200 per person</strong> (non-refundable entry fee)
+        </div>
+      </div>
+      <img src="https://www.pngmart.com/files/22/MrBeast-PNG-File.png" alt="MrBeast with Money" class="hero-image" loading="lazy">
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Challenge Prizes</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3 class="feature-title">$5M Grand Prize</h3>
+          <p>The largest single prize in YouTube history, plus secondary prizes totaling over $10M.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h3 class="feature-title">Beast Mode Challenges</h3>
+          <p>Physical, mental, and outrageous tests designed to push you to your limits.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <h3 class="feature-title">Global Qualifiers</h3>
+          <p>Compete from anywhere with online rounds before the live finale.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="feature-title">Meet MrBeast</h3>
+          <p>Finalists get flown to film with Jimmy and the crew at Beast HQ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="challenges" class="challenges">
+    <div class="container">
+      <h2 class="section-title" style="color: white;">Beast Mode Challenges</h2>
+      <div class="features-grid">
+        <div class="challenge-card">
+          <h3 class="challenge-title"><i class="fas fa-money-bill-wave"></i> Last to Spend</h3>
+          <p>Hold onto a stack of cash the longest while completing physical challenges.</p>
+        </div>
+        <div class="challenge-card">
+          <h3 class="challenge-title"><i class="fas fa-chess"></i> Squid Game Remix</h3>
+          <p>MrBeast's version of the viral games with insane new twists.</p>
+        </div>
+        <div class="challenge-card">
+          <h3 class="challenge-title"><i class="fas fa-brain"></i> 48-Hour Endurance</h3>
+          <p>Stay awake solving puzzles while facing constant distractions.</p>
+        </div>
+        <div class="challenge-card">
+          <h3 class="challenge-title"><i class="fas fa-utensils"></i> Feastables Gauntlet</h3>
+          <p>Eat impossible amounts of chocolate bars to advance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leaderboard" class="leaderboard-section">
+    <div class="container">
+      <h2 class="section-title">Leaderboard</h2>
+      <p>Coming soon - check back after registration closes!</p>
+    </div>
+  </section>
+
+  <section id="register" class="registration-section">
+    <div class="container">
+      <h2 class="section-title">Register Now</h2>
+      <div class="registration-box">
+        <p style="margin-bottom: 24px; color: white; font-size: 1.1rem;">To register for the challenge, please email us with your name and age:</p>
+        <a href="mailto:mrbeastrealone0@gmail.com?subject=Challenge Registration&body=My name is [Your Full Name] and I am [Your Age] years old. I would like to register for the $5,000,000 challenge." class="cta-button">
+          <svg class="crown-svg crown-animate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <path d="M528 448H48c-26.51 0-48-21.49-48-48v-64c0-26.51 21.49-48 48-48h480c26.51 0 48 21.49 48 48v64c0 26.51-21.49 48-48 48zM64 192l96-96 96 96 96-96 96 96 96-96v128H64V192z"/>
+          </svg>
+          Register Now
+        </a>
+        <div class="registration-fee">
+          Participation fee: <strong>$200 per person</strong> (non-refundable entry fee)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Challenge</h3>
+          <a href="#home" class="footer-link"><i class="fas fa-chevron-right"></i> About</a>
+          <a href="#challenges" class="footer-link"><i class="fas fa-chevron-right"></i> Schedule</a>
+          <a href="#features" class="footer-link"><i class="fas fa-chevron-right"></i> Rules</a>
+          <a href="#register" class="footer-link"><i class="fas fa-chevron-right"></i> FAQ</a>
+        </div>
+        <div class="footer-column">
+          <h3>Prizes</h3>
+          <a href="#features" class="footer-link"><i class="fas fa-chevron-right"></i> Grand Prize</a>
+          <a href="#features" class="footer-link"><i class="fas fa-chevron-right"></i> Weekly Wins</a>
+          <a href="#features" class="footer-link"><i class="fas fa-chevron-right"></i> Consolation</a>
+          <a href="#features" class="footer-link"><i class="fas fa-chevron-right"></i> Past Winners</a>
+        </div>
+        <div class="footer-column">
+          <h3>Community</h3>
+          <a href="#leaderboard" class="footer-link"><i class="fas fa-chevron-right"></i> Leaderboard</a>
+          <a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Forums</a>
+          <a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Merch</a>
+          <a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Meetups</a>
+        </div>
+        <div class="footer-column">
+          <h3>Follow MrBeast</h3>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2025 MrBeast Challenges. All rights reserved. <br>
+        This is an official MrBeast production.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Countdown timer
+    function updateCountdown() {
+      const now = new Date();
+      const eventDate = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+      
+      const diff = eventDate - now;
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add subtle animation to feature cards on scroll
+    const featureCards = document.querySelectorAll('.feature-card, .challenge-card');
+    
+    const animateOnScroll = () => {
+      featureCards.forEach(card => {
+        const cardPosition = card.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (cardPosition < screenPosition) {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }
+      });
+    };
+
+    // Set initial state
+    featureCards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'all 0.6s ease';
+    });
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+</body>
+</html>
